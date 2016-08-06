@@ -4,7 +4,8 @@ import MockData from '../../src';
 
 describe('test mockup', () => {
 
-  let mockData = null;
+  let mockData;
+  let count = 3;
   beforeEach(() => {
     let params = {
       cols: [
@@ -17,28 +18,26 @@ describe('test mockup', () => {
         { key: 'none', name: '非申請分數', type: 'random_num', min: 10, max: 100 },
         { key: 'done_time', name: '測驗完成時間', type: 'random_num', min: 5, max: 20, interval: 5 },
         { key: 'check', name: '批閱', type: 'static', text: '-' },
-        { key: 'exma_data', name: '測驗日期', type: 'date', start: '2016-07-08', end: '2016-08-10' },
+        { key: 'exma_date', name: '測驗日期', type: 'date', start: '2016-07-08', end: '2016-08-10' },
         { key: 'exma_status', name: '測驗狀態', type: 'random_pick', source: ['已完成', '未完成'] },
         { key: 'exma_type', name: '測驗形式', type: 'random_pick', source: ['電腦測驗', '紙本測驗'] },
         { key: 'report', name: '報表', type: 'image', src: 'report-icon-32x32.png' },
       ]
     }
-    let count = 10
     mockData = new MockData({params, count});
   });
 
-  it('say hello', async (done) => {
+  it('should create 3 data', async (done) => {
     try {
       mockData.processRandamData();
 
       let data = mockData.getData();
       console.log(data);
-      (data.length == 0).should.be.true;
+      (data.length == count).should.be.true;
       done();
     } catch (e) {
       done(e);
     }
-
   });
 
 });

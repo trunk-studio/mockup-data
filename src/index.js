@@ -6,7 +6,7 @@ export default class HelloWord {
 
 
   constructor({params, count}) {
-    this.chineseName = randamData.chineseName;
+    this.nameData = randamData.nameData;
     this.params = params;
     this.count = count;
     this.sequence = 0;
@@ -35,12 +35,14 @@ export default class HelloWord {
     let colData = null;
     switch (type) {
       case "sequence":
-        colData = this._sequence();
+        colData = this._sequence({col});
         break;
       case "number":
         colData = this._number({col});
         break;
-
+      case "name":
+        colData = this._name({col});
+        break;
       default:
         colData = ""
     }
@@ -54,6 +56,15 @@ export default class HelloWord {
   _number({col}) {
     let max = parseInt(col.format.split("#").join(9));
     let result =  this.random.integer(0, max);
+  }
+
+  _name({col}) {
+    let nameDataLang = this.nameData[col.lang];
+    let max = nameDataLang.length;
+    let index =  this.random.integer(0, max);
+    let result =  nameDataLang[index];
+
+    return result;
   }
 
 

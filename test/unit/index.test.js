@@ -38,6 +38,49 @@ describe('test mockup', () => {
     } catch (e) {
       done(e);
     }
+
+    // sample result
+    /*
+    [ { seq: 0,
+        user: 469660,
+        name: '賴陽愛',
+        type: '1-16冊',
+        subject: 'Unit01',
+        progress: '第 2 部分',
+        none: 78,
+        done_time: 20,
+        check: '-',
+        exma_date: '2016-07-14',
+        exma_status: '已完成',
+        exma_type: '紙本測驗',
+        report: 'report-icon-32x32.png' },
+      { seq: 1,
+        user: 923149,
+        name: '楊宗星',
+        type: '1-16冊',
+        subject: 'Unit01',
+        progress: 'Finish',
+        none: 11,
+        done_time: 10,
+        check: '-',
+        exma_date: '2016-07-23',
+        exma_status: '已完成',
+        exma_type: '電腦測驗',
+        report: 'report-icon-32x32.png' },
+      { seq: 2,
+        user: 510599,
+        name: '楊瑩恭',
+        type: '1-16冊',
+        subject: 'Unit01',
+        progress: 'Finish',
+        none: 25,
+        done_time: 8,
+        check: '-',
+        exma_date: '2016-07-25',
+        exma_status: '未完成',
+        exma_type: '電腦測驗',
+        report: 'report-icon-32x32.png' } ]
+    */
   });
 
 });

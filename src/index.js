@@ -9,7 +9,7 @@ export default class RandamData {
     this.nameData = randamData.nameData;
     this.params = params;
     this.count = count;
-    this.sequence = 0;
+    this.sequence = 1;
     this.data = [];
     this.random = new Random();
   }
@@ -100,9 +100,9 @@ export default class RandamData {
 
   }
 
-  _image({col}) {
-    let {src} = col;
-    let result = src;
+  _icon({col}) {
+    let {className} = col;
+    let result = `<i class="${className}"></i>`;
     return result;
   }
 

@@ -21,7 +21,7 @@ describe('test mockup', () => {
         { key: 'exma_date', name: '測驗日期', type: 'date', start: '2016-07-08', end: '2016-08-10' },
         { key: 'exma_status', name: '測驗狀態', type: 'random_pick', source: ['已完成', '未完成'] },
         { key: 'exma_type', name: '測驗形式', type: 'random_pick', source: ['電腦測驗', '紙本測驗'] },
-        { key: 'report', name: '報表', type: 'image', src: 'report-icon-32x32.png' },
+        { key: 'report', name: '報表', type: 'icon', className: 'fa fa-print' },
       ]
     }
     mockData = new MockData({params, count});
